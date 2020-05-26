@@ -1,0 +1,25 @@
+$this->validate(Request(),[
+           
+         'title'=>'required',
+         'detaill'=>'required',
+         'Pub_Symptoms'=>'required',
+         'Private_Symptoms'=>'required',
+         'protection'=>'required',
+         'treatment'=>'required',
+         'url'=>'image|mimes:jpg,jpeg,gif,png|max:2048'
+
+	 	]);
+
+
+  <img class="card-img-top" src="uplaod/{{$desease->url}}" alt="Card image cap" width="300px" height="300px">	
+        @if(!$desease->url)
+
+
+
+
+        @endif
+
+
+php artisan  make:model -m category
+php artisan migrate
+php artisan make:migration add_category_id_to_desease --table="diseases"
